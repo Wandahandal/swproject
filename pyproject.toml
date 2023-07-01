@@ -9,7 +9,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pytest = "^6.0"
 
+[tool.poetry.scripts]
+test = "pytest"
 
 [build-system]
 requires = ["poetry-core"]
