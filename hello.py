@@ -3,3 +3,4 @@ def test_print_hello():
     assert output == "hello"
     print(output)
 
+test_print_hello()
