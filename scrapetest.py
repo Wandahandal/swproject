@@ -1,7 +1,7 @@
 import praw
 import pandas as pd
  
-reddit_read_only = praw.Reddit(client_id="AUdenJ8dFGlyW0B5PBezew",client_secret="PMLVog-4HRSGXV9dUJ2JbLIPssgQ_Q",user_agent="scrapetest")        # your user agent
+reddit_read_only = praw.Reddit(client_id="AUdenJ8dFGlyW0B5PBezew",client_secret="PMLVog-4HRSGXV9dUJ2JbLIPssgQ_Q",user_agent="scrapetest")      
  
 # URL of the post
 url = "https://www.reddit.com/r/movies/comments/155ag1m/\official_discussion_oppenheimer_spoilers/"
@@ -20,4 +20,4 @@ for comment in submission.comments:
  
 # creating a dataframe
 comments_df = pd.DataFrame(post_comments, columns=['comment'])
-comments_df.to_csv("Comments on subreddit", index=True)
+comments_df.to_csv("Commentssubreddit.csv", index=True)
