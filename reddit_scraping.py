@@ -48,20 +48,3 @@ for post in hot_posts:
 # Saving the data in a pandas  and csv file
 top_posts = pd.DataFrame(posts_dict, columns=['Title', 'Post Text', 'Total Comments','Post Comments'])
 top_posts.to_csv("Top Posts.csv", index=True, sep = ';')
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-#save top posts in panda df
-posts = subreddit.top("month")  #Scraping the top posts of the current month
-
-'''
