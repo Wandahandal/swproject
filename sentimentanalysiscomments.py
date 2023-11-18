@@ -1,5 +1,5 @@
 import vaderSentiment
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer 
 import praw
 import pandas as pd
 import re
@@ -56,3 +56,22 @@ def get_sentiment_scores(comment):
 # Apply the sentiment analysis function to the 'text' column and store the results in new columns
 comments_df['sentiment_scores'] = comments_df['comment'].apply(get_sentiment_scores)
 comments_df.to_csv("OppenheimerCommentsAnalysis.csv", index=True)
+
+
+# List to store compound scores
+compound_scores = []
+
+# Calculate compound score for each text
+for text in post_comments:
+    # Get sentiment scores for each text
+    scores = analyzer.polarity_scores(text)
+    # Append the compound score to the list
+    compound_scores.append(scores['compound'])
+
+# Calculate the average of compound scores
+if compound_scores:
+    average_score = sum(compound_scores) / len(compound_scores)
+    print("Average Compound Score:", average_score)
+else:
+    print("No scores to calculate the average.")
+

@@ -1,5 +1,6 @@
 import praw
 import pandas as pd
+import re
  
 reddit_read_only = praw.Reddit(client_id="AUdenJ8dFGlyW0B5PBezew",client_secret="PMLVog-4HRSGXV9dUJ2JbLIPssgQ_Q",user_agent="scrapetest")      
  
