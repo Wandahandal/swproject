@@ -2,6 +2,7 @@ import vaderSentiment
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import praw
 import pandas as pd
+import re
 
 
 #praw instance creation
@@ -10,6 +11,22 @@ reddit_read_only = praw.Reddit(client_id="AUdenJ8dFGlyW0B5PBezew",client_secret=
 # URL of the post
 url = "https://www.reddit.com/r/movies/comments/155ag1m/official_discussion_oppenheimer_spoilers/"
  
+def data_cleaner(data):
+	#lowercase
+	data = data.lower()
+	# Removing URLs with a regular expression
+	url_pattern = re.compile(r'https?://\S+|www\.\S+')
+	data = url_pattern.sub(r'', data)
+	# Remove Emails
+	data = re.sub('\S*@\S*\s?', '', data)
+	# Remove new line characters
+	data = re.sub('\s+', ' ', data)
+	# Remove single quotes
+	data = re.sub("\'", "", data)
+	data = re.sub(r'\d+', '', data)  # remove digits
+	data = re.sub(r'[^\w\s]', '', data)  # remove special character
+	return data
+
 # Creating a submission object
 submission = reddit_read_only.submission(url=url)
 from praw.models import MoreComments
@@ -19,8 +36,11 @@ post_comments = []
 for comment in submission.comments:
     if type(comment) == MoreComments:
         continue
+    comment_txt = data_cleaner(comment.body)
  
-    post_comments.append(comment.body)
+    post_comments.append(comment_txt)
+ 
+
  
 # creating a dataframe
 comments_df = pd.DataFrame(post_comments, columns=['comment'])
