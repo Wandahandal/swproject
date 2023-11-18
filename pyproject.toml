@@ -13,6 +13,8 @@ pytest = "^6.0"
 praw = "^7.7.1"
 numpy = { version = "^1.26.0", python = ">=3.9,<3.13" }
 pandas = "^1.0.0"
+vadersentiment = "^3.3.2"
+textblob = "^0.17.1"
 
 [tool.poetry.scripts]
 test = "pytest"
