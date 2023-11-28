@@ -1,0 +1,39 @@
+name: Testing_CI
+on:  
+  push: 
+    branches: 
+    - main  
+jobs:  
+  test-scraper: 
+    runs-on: ubuntu-latest 
+    steps: 
+    - name: check out the repository 
+      uses: actions/checkout@v2 
+    - name: unit testing  
+      run: python -m pytest swproject/scrapetest.py 
+    - name: launch the code 
+      run:  python scrapetest.py
+  test-analyzer:
+    runs-on: ubuntu-latest  
+    steps: 
+    - name: check out the repository 
+      uses: actions/checkout@v2 
+    - name: unit testing  
+      run: python -m pytest swproject/sentiment_analysis.py 
+    - name: launch the code 
+      run: sentiment_analysis.py
+ 
+  integration-testing:  
+    needs:  
+      - test-scraper  
+      - test-analyzer  
+    runs-on: ubuntu-latest 
+    steps: 
+      - run: true 
+
+  deployment:  
+    needs: 
+      - integration-testing  
+    runs-on: ubuntu-latest 
+    steps: 
+      - run: true 
