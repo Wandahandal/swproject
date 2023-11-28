@@ -9,7 +9,7 @@ jobs:
     - name: check out the repository 
       uses: actions/checkout@v2 
     - name: unit testing  
-      run: python -m pytest swproject/scrapetest.py 
+      run: poetry run pytest swproject/scrapetest.py 
     - name: launch the code 
       run:  python scrapetest.py
   test-analyzer:
