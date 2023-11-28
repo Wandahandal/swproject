@@ -1,8 +1,6 @@
 name: Testing_CI
 on:  
-  push: 
-    branches: 
-    - main  
+  push:  
 jobs:  
   test-scraper: 
     runs-on: ubuntu-latest 
