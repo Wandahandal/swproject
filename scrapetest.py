@@ -40,4 +40,4 @@ for comment in submission.comments:
 comments_df = pd.DataFrame(post_comments, columns=['Comments'])
 comments_df.to_csv("Subreddit comments.csv", index=True, sep=';')
 
-print(test trial)
+
