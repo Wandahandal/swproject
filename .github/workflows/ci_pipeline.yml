@@ -16,8 +16,9 @@ jobs:
         run: poetry install
       - name: Activate Poetry shell
         run: poetry shell
-      - name: Run tests
+      - name: Test scraping 
         run: pytest scrapetest.py
+      - name: Test sentiment analysis
         run: pytest sentiment_analysis.py
       - name: Check scraping
         run: python scrapetest.py
