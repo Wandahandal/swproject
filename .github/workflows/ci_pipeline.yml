@@ -14,10 +14,8 @@ jobs:
           python-version: 3.9
       - name: Install project dependencies
         run: poetry install
-        run: echo “the project dependencies are installed successfully”
       - name: Activate Poetry shell
         run: poetry shell
-        run: echo “the poetry environment shell is now active”
       - name: Run tests
         run: pytest scrapetest.py
         run: pytest sentiment_analysis.py
