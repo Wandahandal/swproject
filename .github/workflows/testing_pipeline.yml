@@ -1,37 +1,39 @@
-name: Testing_CI
-on:  
-  push:  
-jobs:  
-  test-scraper: 
-    runs-on: ubuntu-latest 
-    steps: 
-    - name: check out the repository 
-      uses: actions/checkout@v2 
-    - name: unit testing  
-      run: python -m pytest swproject/scrapetest.py 
-    - name: launch the code 
-      run:  python scrapetest.py
-  test-analyzer:
-    runs-on: ubuntu-latest  
-    steps: 
-    - name: check out the repository 
-      uses: actions/checkout@v2 
-    - name: unit testing  
-      run: python -m pytest swproject/sentiment_analysis.py 
-    - name: launch the code 
-      run: sentiment_analysis.py
- 
-  integration-testing:  
-    needs:  
-      - test-scraper  
-      - test-analyzer  
+name: CI
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  Check-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+  	- name: Install project dependencies
+    	run: poetry install
+	    run: echo “the project dependencies are installed successfully”
+  	- name: Activate Poetry shell
+    	run: poetry shell
+	    run: echo “the poetry environment shell is now active”
+  	- name: Run tests
+    	run: pytest scrapetest.py
+	    run: pytest sentiment_analysis.py
+  	- name: Check scraping
+      run: python scrapetest.py
+  	- name: Check sentiment analysis
+    	run: python sentiment_analysis.py
+  Integration-testing:  
+    needs: 
+      Check-dependencies
     runs-on: ubuntu-latest 
     steps: 
       - run: true 
-
-  deployment:  
-    needs: 
-      - integration-testing  
+  Deployment:  
+    needs:
+      Integration-testing  
     runs-on: ubuntu-latest 
     steps: 
       - run: true 
