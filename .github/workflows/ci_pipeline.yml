@@ -21,7 +21,6 @@ jobs:
           if ! command -v poetry &> /dev/null; then
             echo "Poetry is not installed. Installing Poetry..."
             curl -sSL https://install.python-poetry.org | python -
-            source $HOME/.poetry/env
           else
             echo "Poetry is already installed."
           fi
