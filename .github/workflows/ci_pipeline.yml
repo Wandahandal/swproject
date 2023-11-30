@@ -12,6 +12,14 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
+      - name: Check if poetry is installed
+        run: | 
+          if ! command -v poetry &> /dev/null; then
+            echo "Poetry is not installed. Installing Poetry..."
+            pip install poetry
+          else
+            echo "Poetry is already installed."
+          fi
       - name: Install project dependencies
         run: poetry install
       - name: Activate Poetry shell
