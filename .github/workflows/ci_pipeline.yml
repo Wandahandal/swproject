@@ -28,6 +28,10 @@ jobs:
       - name: Install Dependencies
         run: |
           poetry install
+          echo "List contents of virtual environment:"
+          ls -l $HOME/.cache/pypoetry/virtualenvs
+          echo "Check for any potential installation errors:"
+          cat $HOME/.cache/pypoetry/virtualenvs/*/log/*
       - name: Activate Poetry shell
         run: poetry shell
       - name: Test scraping 
