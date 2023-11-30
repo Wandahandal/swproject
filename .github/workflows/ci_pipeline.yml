@@ -21,7 +21,8 @@ jobs:
             echo "Poetry is already installed."
           fi
       - name: Install project dependencies
-        run: poetry install
+        run: 
+          poetry install
       - name: Activate Poetry shell
         run: poetry shell
       - name: Test scraping 
