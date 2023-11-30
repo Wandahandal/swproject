@@ -22,7 +22,7 @@ jobs:
           fi
       - name: Configure Poetry
         run: |
-          echo 'export PATH="$HOME/.poetry/bin:$PATH"' >> $GITHUB_ENV
+          echo PATH="$HOME/.poetry/bin:$PATH" >> $GITHUB_ENV
       - name: Check Poetry version
         run: poetry --version
       - name: Install Dependencies
