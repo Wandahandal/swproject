@@ -20,11 +20,11 @@ jobs:
           else
             echo "Poetry is already installed."
           fi
+      - name: Activate Poetry shell
+        run: poetry shell
       - name: Install project dependencies
         run: 
           poetry install
-      - name: Activate Poetry shell
-        run: poetry shell
       - name: Test scraping 
         run: pytest scrapetest.py
       - name: Test sentiment analysis
