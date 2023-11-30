@@ -20,9 +20,11 @@ jobs:
           else
             echo "Poetry is already installed."
           fi
-      - name: Install project dependencies
+      - name: Configure poetry to create virtual environments
         run: 
           poetry config virtualenvs.create true
+      - name: Activate potry shell
+        run:
           poetry install --no-root
       - name: Activate Poetry shell
         run: poetry shell
