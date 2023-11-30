@@ -25,9 +25,7 @@ jobs:
           echo 'export PATH="$HOME/.poetry/bin:$PATH"' >> $GITHUB_ENV
       - name: Check Poetry version
         run: poetry --version
-      - name: Configure Poetry to create virtual environments
-        run: poetry config virtualenvs.create true
-      - name: Activate Poetry shell and Install Dependencies
+      - name: Install Dependencies
         run: |
           poetry install --no-root
       - name: Activate Poetry shell
