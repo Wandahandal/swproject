@@ -20,6 +20,11 @@ jobs:
           else
             echo "Poetry is already installed."
           fi
+      - name: Configure Poetry
+        run: |
+          echo 'export PATH="$HOME/.poetry/bin:$PATH"' >> $GITHUB_ENV
+      - name: Check Poetry version
+        run: poetry --version
       - name: Configure Poetry to create virtual environments
         run: poetry config virtualenvs.create true
       - name: Activate Poetry shell and Install Dependencies
