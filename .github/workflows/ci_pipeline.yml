@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Check if poetry is installed
-        run: | 
+        run: 
           if ! command -v poetry &> /dev/null; then
             echo "Poetry is not installed. Installing Poetry..."
             pip install poetry
@@ -21,17 +21,13 @@ jobs:
             echo "Poetry is already installed."
           fi
       - name: Configure Poetry
-        run: |
+        run: 
           echo PATH="$HOME/.poetry/bin:$PATH" >> $GITHUB_ENV
       - name: Check Poetry version
         run: poetry --version
       - name: Install Dependencies
-        run: |
+        run: 
           poetry install
-          echo "List contents of virtual environment:"
-          ls -l $HOME/.cache/pypoetry/virtualenvs
-          echo "Check for any potential installation errors:"
-          cat $HOME/.cache/pypoetry/virtualenvs/*/log/*
       - name: Activate Poetry shell
         run: poetry shell
       - name: Test scraping 
