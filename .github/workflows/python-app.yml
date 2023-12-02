@@ -35,4 +35,8 @@ jobs:
     - name: Run Python Script
       run: |
         poetry run python scrapetest.py
+    - name: Run Python Analysis
+      run: |
+        poetry run python sentiment_analysis.py
+        
 
