@@ -675,7 +675,6 @@ files = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "janome"
 version = "0.5.0"
 description = "Japanese morphological analysis engine."
