@@ -1138,8 +1138,6 @@ extra = ["lxml (>=4.6)", "pydot (>=1.4.2)", "pygraphviz (>=1.11)", "sympy (>=1.1
 test = ["pytest (>=7.2)", "pytest-cov (>=4.0)"]
 
 [[package]]
-=======
->>>>>>> 2e189c84891486f4e01c12959008073322d71ca4
 name = "nltk"
 version = "3.8.1"
 description = "Natural Language Toolkit"
@@ -1694,7 +1692,6 @@ files = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "pyyaml"
 version = "6.0.1"
 description = "YAML parser and emitter for Python"
@@ -1754,8 +1751,6 @@ files = [
 ]
 
 [[package]]
-=======
->>>>>>> 2e189c84891486f4e01c12959008073322d71ca4
 name = "regex"
 version = "2023.10.3"
 description = "Alternative regular expression module, to replace re."
@@ -2179,7 +2174,6 @@ files = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "smart-open"
 version = "6.4.0"
 description = "Utils for streaming large files (S3, HDFS, GCS, Azure Blob Storage, gzip, bz2...)"
@@ -2250,8 +2244,6 @@ files = [
 widechars = ["wcwidth"]
 
 [[package]]
-=======
->>>>>>> 2e189c84891486f4e01c12959008073322d71ca4
 name = "textblob"
 version = "0.17.1"
 description = "Simple, Pythonic text processing. Sentiment analysis, part-of-speech tagging, noun phrase parsing, and more."
@@ -2266,7 +2258,6 @@ files = [
 nltk = {version = ">=3.1", markers = "python_version >= \"3\""}
 
 [[package]]
-<<<<<<< HEAD
 name = "threadpoolctl"
 version = "3.2.0"
 description = "threadpoolctl"
@@ -2406,7 +2397,6 @@ files = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "torch"
 version = "2.1.1"
 description = "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
@@ -2460,8 +2450,6 @@ dynamo = ["jinja2"]
 opt-einsum = ["opt-einsum (>=3.3)"]
 
 [[package]]
-=======
->>>>>>> 2e189c84891486f4e01c12959008073322d71ca4
 name = "tqdm"
 version = "4.66.1"
 description = "Fast, Extensible Progress Meter"
@@ -2482,7 +2470,6 @@ slack = ["slack-sdk"]
 telegram = ["requests"]
 
 [[package]]
-<<<<<<< HEAD
 name = "transformer-smaller-training-vocab"
 version = "0.3.2"
 description = "Temporary remove unused tokens during training to save ram and speed."
@@ -2607,8 +2594,6 @@ files = [
 ]
 
 [[package]]
-=======
->>>>>>> 2e189c84891486f4e01c12959008073322d71ca4
 name = "update-checker"
 version = "0.18.0"
 description = "A python module that will check for package updates."
