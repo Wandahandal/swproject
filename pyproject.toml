@@ -7,6 +7,7 @@ readme = "README.md"
 
 
 
+
 [tool.poetry.dependencies]
 python = "^3.9"
 pytest = "^6.0"
@@ -14,7 +15,6 @@ praw = "^7.7.1"
 numpy = { version = "^1.26.0", python = ">=3.9,<3.13" }
 pandas = "^1.0.0"
 flair = "^0.13.0"
-textblob = "^0.17.1"
 vadersentiment = "^3.3.2"
 
 [tool.poetry.scripts]
