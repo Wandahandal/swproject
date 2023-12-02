@@ -34,8 +34,10 @@ comments_df['Flair sentiment scores'] = comments_df['Comments'].apply(flair_sent
 
 average_score = sum(vader_compound_scores) / len(vader_compound_scores)
 comments_df.loc['Averages','Vader sentiment scores'] = average_score
+print(f'Vader - the average value for the submitted post is {average_score}')
 
 x, y = flair_count_scores.count('POSITIVE'), flair_count_scores.count('NEGATIVE')
 comments_df.loc['Averages','Flair sentiment scores'] = (f'n positives: {x}, n negatives: {y}')
+print(f'Flair - the positive and negative comments for the submitted post are, respectively: {x} positives, {y} negatives')
 
 comments_df.to_csv("Comments sentiment analysis.csv", index=True, sep=';')
