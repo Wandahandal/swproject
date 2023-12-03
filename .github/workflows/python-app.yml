@@ -34,7 +34,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run Python Script
       run: |
-        poetry run python scrapetest.py
+        poetry run python reddit_scraping.py
     - name: Run Python Analysis
       run: |
         poetry run python sentiment_analysis.py
