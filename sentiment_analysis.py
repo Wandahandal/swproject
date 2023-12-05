@@ -19,10 +19,10 @@ def flair_sentiment_scores(comment):
     classifier = TextClassifier.load('en-sentiment')
     sentence = Sentence(comment)
     classifier.predict(sentence)
-    sentiment = sentence.labels[0].value
-    score = sentence.labels[0].score
-    flair_count_scores.append(sentiment)
-    return sentiment, score
+    sentiment = sentence.labels
+    for label in sentiment:
+        flair_count_scores.append(label.value)
+        return label.value, label.score
 
 #define lists to store compund scores
 vader_compound_scores = []
