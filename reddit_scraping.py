@@ -6,7 +6,8 @@ from praw.models import MoreComments
 reddit_read_only = praw.Reddit(client_id="AUdenJ8dFGlyW0B5PBezew",client_secret="PMLVog-4HRSGXV9dUJ2JbLIPssgQ_Q",user_agent="scrapetest")      
  
 # URL of the post
-url = "https://www.reddit.com/r/movies/comments/17c17wa/official_discussion_killers_of_the_flower_moon/"
+url = "https://www.reddit.com/r/programming/comments/c2s81g/maybe_agile_is_the_problem/"
+#"https://www.reddit.com/r/movies/comments/17c17wa/official_discussion_killers_of_the_flower_moon/"
 
 #url = input('Provide a valid reddit post url:')
 
